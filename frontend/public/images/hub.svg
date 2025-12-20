@@ -1,0 +1,25 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#f8fafc"/>
+    
+    <!-- Cable -->
+    <path d="M156 256 C 100 256, 100 200, 100 150" stroke="#94a3b8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <rect x="88" y="120" width="24" height="30" rx="4" fill="#64748b"/> <!-- USB Connector -->
+
+    <!-- Hub Body -->
+    <rect x="156" y="196" width="200" height="120" rx="16" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="4"/>
+    
+    <!-- Shadow -->
+    <path d="M170 330 L340 330 L350 340 L160 340 Z" fill="#000000" opacity="0.1"/>
+
+    <!-- Ports -->
+    <rect x="186" y="236" width="20" height="40" rx="4" fill="#475569"/>
+    <rect x="226" y="236" width="20" height="40" rx="4" fill="#475569"/>
+    <rect x="266" y="236" width="20" height="40" rx="4" fill="#475569"/>
+    
+    <!-- HDMI Port -->
+    <path d="M316 241 L346 241 L344 266 L318 266 Z" fill="#475569"/>
+    
+    <!-- Status Light -->
+    <circle cx="256" cy="290" r="4" fill="#10b981"/>
+</svg>

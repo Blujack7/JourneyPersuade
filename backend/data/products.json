@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop Pro",
+        "price": 1299.99,
+        "image": "/images/laptop.png",
+        "description": "Laptop de alto rendimiento para profesionales.",
+        "category": "electronics"
+    },
+    {
+        "id": 2,
+        "name": "Smartphone X",
+        "price": 799.99,
+        "image": "/images/phone.png",
+        "description": "La última tecnología en smartphones.",
+        "category": "electronics"
+    },
+    {
+        "id": 3,
+        "name": "Auriculares Gaming",
+        "price": 149.99,
+        "image": "/images/headset.png",
+        "description": "Sonido inmersivo para juegos.",
+        "category": "accessories"
+    },
+    {
+        "id": 4,
+        "name": "Monitor 4K",
+        "price": 349.99,
+        "image": "/images/monitor.png",
+        "description": "Pantalla nítida y cristalina.",
+        "category": "electronics"
+    },
+    {
+        "id": 5,
+        "name": "Ratón Inalámbrico",
+        "price": 49.99,
+        "image": "/images/mouse.png",
+        "description": "Ratón ergonómico sin cables.",
+        "category": "accessories"
+    },
+    {
+        "id": 6,
+        "name": "Teclado Mecánico",
+        "price": 129.99,
+        "image": "/images/keyboard.png",
+        "description": "Teclado mecánico con sonido clicky.",
+        "category": "accessories"
+    },
+    {
+        "id": 7,
+        "name": "Hub USB-C",
+        "price": 39.99,
+        "image": "/images/hub.png",
+        "description": "Hub multipuerto USB-C.",
+        "category": "accessories"
+    }
+]
