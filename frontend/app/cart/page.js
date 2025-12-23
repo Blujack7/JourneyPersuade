@@ -11,6 +11,7 @@ export default function CartPage() {
     // Exit Intent Logic
     const [showExitPopup, setShowExitPopup] = useState(false);
     const [hasShownPopup, setHasShownPopup] = useState(false);
+    const [isFreeShipping, setIsFreeShipping] = useState(false);
 
     const trackEvent = async (eventType, eventData = {}) => {
         try {
@@ -103,7 +104,10 @@ export default function CartPage() {
         alert("¡Checkout iniciado! (Simulación)");
     }
 
-    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+    const shippingBase = 5; // $5 USD base
+    const currentShipping = isFreeShipping ? 0 : shippingBase;
+    const total = subtotal + currentShipping;
 
     useEffect(() => {
         const handleMouseLeave = (e) => {
@@ -118,6 +122,12 @@ export default function CartPage() {
     }, [hasShownPopup, cartItems]);
 
     const closePopup = () => setShowExitPopup(false);
+
+    const applyFreeShipping = () => {
+        setIsFreeShipping(true);
+        setShowExitPopup(false);
+        trackEvent('free_shipping_accepted');
+    };
 
     if (cartItems.length === 0) {
         return (
@@ -199,11 +209,20 @@ export default function CartPage() {
                     <div className="space-y-2 mb-6">
                         <div className="flex justify-between">
                             <span className="text-slate-500">Subtotal</span>
-                            <span className="text-slate-800">{formatPrice(total)}</span>
+                            <span className="text-slate-800">{formatPrice(subtotal)}</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between items-center">
                             <span className="text-slate-500">Envío</span>
-                            <span className="text-slate-800">{formatPrice(0)}</span>
+                            <div className="text-right">
+                                {isFreeShipping ? (
+                                    <div className="flex flex-col items-end">
+                                        <span className="text-xs text-slate-400 line-through">{formatPrice(shippingBase)}</span>
+                                        <span className="text-green-600 font-bold animate-pulse">¡GRATIS!</span>
+                                    </div>
+                                ) : (
+                                    <span className="text-slate-800">{formatPrice(shippingBase)}</span>
+                                )}
+                            </div>
                         </div>
                         <div className="border-t border-slate-200 pt-2 flex justify-between font-bold text-lg text-slate-900">
                             <span>Total</span>
@@ -254,7 +273,7 @@ export default function CartPage() {
                     </p>
                     <div className="flex flex-col gap-3">
                         <button
-                            onClick={closePopup}
+                            onClick={applyFreeShipping}
                             className="w-full py-3 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-lg text-lg shadow-lg transform transition hover:-translate-y-1"
                         >
                             ¡Quiero mi Envío Gratis!
