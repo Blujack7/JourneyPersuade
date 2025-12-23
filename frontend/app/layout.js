@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="antialiased text-slate-800 bg-slate-50 selection:bg-pink-500 selection:text-white">
         <Navbar /> {/* Dynamic count */}
-        <main className="container mx-auto pb-8 pt-28 min-h-screen">
+        <main className="container mx-auto py-8 min-h-screen">
           {children}
         </main>
         <Chatbot />

@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Smartphone X",
         "price": 799.99,
-        "image": "/images/phone.png",
+        "image": "/images/smartphone.png",
         "description": "La última tecnología en smartphones.",
         "category": "electronics"
     },

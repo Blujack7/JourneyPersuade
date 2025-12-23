@@ -38,7 +38,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 glass" style={{ height: '70px' }}>
+        <nav className="sticky top-0 z-50 w-full glass" style={{ height: '70px' }}>
             <div className="container h-full flex items-center justify-between" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
                 <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <div style={{ background: 'linear-gradient(135deg, #8b5cf6, #ec4899)', padding: '0.5rem', borderRadius: '0.5rem' }}>
@@ -55,7 +55,7 @@ export default function Navbar() {
                         placeholder="Buscar productos..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/80"
+                        className="w-full pl-10 pr-4 py-2 rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white"
                     />
                     <Search className="absolute left-3 top-2.5 text-slate-400" size={20} />
                 </form>
