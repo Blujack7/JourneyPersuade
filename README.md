@@ -7,17 +7,8 @@ MVP de E-commerce destinado a reducir el abandono de carritos mediante IA proact
 - **Opción A (Recomendada si tienes Docker)**: Docker Desktop.
 - **Opción B (Manual)**: Python 3.10+ y Node.js 18+.
 
-## Opción A: Ejecutar con Docker
+## Opción A: Ejecución Manual (Sin Docker)
 
-1. Abre una terminal.
-2. Ejecuta:
-   ```bash
-   docker compose up --build
-   ```
-
-## Opción B: Ejecución Manual (Sin Docker)
-
-Si no tienes Docker instalado, sigue estos pasos:
 
 ### 1. Iniciar Backend (FastAPI)
 Abre una terminal en `backend/`:
