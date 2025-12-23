@@ -13,9 +13,8 @@ export default function CartPage() {
     const [hasShownPopup, setHasShownPopup] = useState(false);
 
     const trackEvent = async (eventType, eventData = {}) => {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
         try {
-            await fetch(`${apiUrl}/api/analytics/track`, {
+            await fetch('http://localhost:8000/api/analytics/track', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -62,9 +61,8 @@ export default function CartPage() {
         const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
         // Call AI Backend Analysis
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
         try {
-            const res = await fetch(`${apiUrl}/api/cart/analyze`, {
+            const res = await fetch('http://localhost:8000/api/cart/analyze', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ cart_total: total, items: items })
@@ -78,9 +76,8 @@ export default function CartPage() {
 
     const fetchRecommendations = async (items) => {
         const itemIds = items.map(i => i.id);
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
         try {
-            const res = await fetch(`${apiUrl}/api/recommend/recommend`, {
+            const res = await fetch('http://localhost:8000/api/recommend/recommend', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(itemIds)

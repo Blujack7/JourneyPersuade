@@ -17,8 +17,7 @@ function HomeContent() {
 
   useEffect(() => {
     // Fetch products from FastAPI
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-    fetch(`${apiUrl}/api/products`)
+    fetch('http://localhost:8000/api/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
